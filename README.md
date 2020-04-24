@@ -1,40 +1,49 @@
 # angular
-Angular 8 , Material Design using fire base database
 
---adding angular materail write the command : ng add @angular/material
+Tools and Technology:  Angular8, Material design, google firebase database.
 
---adding angular firebase
+--> How to add angular material in the project: go to your project then write the command "ng add @angular/material" in the integrated terminal in VS code.
 
---> go to google firebase console
+--How to configure angular firebase database :
 
---> Add a new project with your desired name
+--> using your browser go to "https://firebase.google.com/" then click on "Go to console" buttone in the right corner of the page. 
 
---> after successfull generiting the project go to database menu
+--> Click on "+ Add Project"
 
---> go real time database option and create a database and chose the test mode from the wizard and then press enable
+--> Write your project name in the textbox. then click on "Continue" button
 
--- install the bellow packages with the command
+--> Dissabled the toggole from "Enable Google Analytics for this project". then press on "create project" button. after success press on "continue" button
 
-npm i --s firebase angularfire2
---import 2 packages in the app.module.ts file
+--> From the left panel click on "database menu" go to "Realtime Database" located in the bottom of the page.
+
+--> Click on "create database" mark the Radio Button as "Start in test mode" then click on "enable" button
+
+
+--> Install the below packages with the command inside your project with the integrated terminal in VS code.
+
+   "npm i --s firebase angularfire2"
+
+--> import 2 packages in the app.module.ts file
 
 import { AngularFireModule } from 'angularfire2'
 
 import { AngularFireDatabaseModule } from 'angularfire2/database'
 
-import the avobe two modules in side the import array
+--> import the avobe two modules in side the import array
 
---back to the firebase site and click on project overview and copy the config file
+--back to the firebase panel in the browser and click on "project overview" and the  and copy the config file from 
+ 
+ "Get started by adding Firebase to your app" under this line you will find a icon like </>
 
--- paste the copied firebase config file in side the environment.ts file
+--> paste the copied firebase config file inside the environment.ts file
 
--import the environment.ts file in side the app.module.ts file
+--> import the environment.ts file in side the app.module.ts file
 
-import {environment} from '../environments/environment'
+  import {environment} from '../environments/environment'
 
---for initialize the firebase config need to add the below command
+--> for initialize the firebase config need to add the below command in the import arry of add.module.ts file
 
-AngularFireModule.initializeApp(environment.firebaseConfig)
+  AngularFireModule.initializeApp(environment.firebaseConfig) 
 
 ---for storing and retrive data using firbase - import two classes in the service class
 
@@ -42,4 +51,3 @@ import {AngularFireDatabase, AngularFireList } from 'angularfire2/database'
 
 inject the AngularFireDatabase in the constructor like - constructor(private firebase: AngularFireDatabase){}
 
-for getting list need to initialize the AngularFireList like - traineeList: AngularFireList;
